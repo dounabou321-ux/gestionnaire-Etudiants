@@ -13,5 +13,19 @@ def statut(moyenne):
         return "Admis"
     else:
         return "Refusé"
+for nom, notes in etudiants.items():
+    moyenne = calculer_moyenne(notes)
+    resultat = statut(moyenne)
+    print(f"{nom}: Moyenne = {moyenne:.2f}, Statut = {resultat}")
+classement = sorted(
+    etudiants.items(),
+    key=lambda etudiant: calculer_moyenne(etudiant[1]),
+    reverse=True
+)
+for i, (nom, notes) in enumerate(classement, 1):
+    print(f"{i}. {nom} — Moyenne : {calculer_moyenne(notes):.2f}")
+admis = [nom for nom, notes in etudiants.items() if calculer_moyenne(notes) >= 10]
 
+for nom in admis:
+    print(nom)
 
