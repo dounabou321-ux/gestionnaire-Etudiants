@@ -8,4 +8,10 @@ etudiants ={
 def calculer_moyenne(notes):
     moyenne = sum(notes) / len(notes)
     return moyenne
+def statut(moyenne):
+    if moyenne >= 10:
+        return "Admis"
+    else:
+        return "Refusé"
+
 
