@@ -5,3 +5,7 @@ etudiants ={
     "Karim": [8, 6, 10],
     "Nadia": [13, 15, 12]
 }
+def calculer_moyenne(notes):
+    moyenne = sum(notes) / len(notes)
+    return moyenne
+
